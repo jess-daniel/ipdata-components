@@ -9,7 +9,9 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "release": "rollup -c && npm publish"
+    "release": "rollup -c && npm publish",
+    "sb": "start-storybook -p 6006",
+    "build-sb": "build-storybook"
   },
   "keywords": [],
   "author": "Jess Daniel",
@@ -28,6 +30,13 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-docs": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/react": "^6.3.12",
+    "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.58.3",

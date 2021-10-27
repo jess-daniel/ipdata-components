@@ -1,15 +1,21 @@
-import Cookies from "js-cookie";
+export const CountryBlocked = ({ blockedCountries, ipData, children }) => {
+  const { country_code } = ipData;
 
-export const CountryBlocked = ({ blockedCountries }) => {
-  const { country_code } = Cookies.get("ipdata");
+  if (blockedCountries.length > 0) {
+    const blocked = blockedCountries.some((code) => {
+      return country_code === code;
+    });
 
-  const blocked = blockedCountries.some((code) => {
-    return country_code === code;
-  });
+    return blocked ? (
+      <div
+        style={{ backgroundColor: "coral", height: "500px", width: "500px" }}
+      >
+        <p>This content is not available in your geo-location</p>
+      </div>
+    ) : (
+      children
+    );
+  }
 
-  blocked ? (
-    <div>
-      <p>This content is not available in your geo-location</p>
-    </div>
-  ) : null;
+  return children;
 };

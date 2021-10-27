@@ -1,0 +1,24 @@
+import { Meta, Story, Template } from "@storybook/addon-docs";
+import { CountryBlocked } from "../components/CountryBlocked";
+
+<Meta title="Components/BlockedCountry" />
+
+export const CountryBlockedStory = ({ ...args }) => {
+  console.log("args", args);
+  return (
+    <CountryBlocked {...args}>
+      <p>{args.content}</p>
+    </CountryBlocked>
+  );
+};
+
+<Story
+  name="primary"
+  args={{
+    blockedCountries: ["Uk", "CA", "US"],
+    ipData: { country_code: "CA" },
+    content: "This content is protected",
+  }}
+>
+  {CountryBlockedStory.bind({})}
+</Story>

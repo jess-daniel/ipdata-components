@@ -1,0 +1,19 @@
+import { Meta, Story, Template } from "@storybook/addon-docs";
+import { CookieNotice } from "../components/CookieNotice";
+
+<Meta title="Components/CookieNotice" />
+
+export const CookieNoticeStory = ({ ...args }) => {
+  return <CookieNotice {...args} />;
+};
+
+<Story
+  name="primary"
+  args={{
+    showNotice: true,
+    apiKey: process.env.STORYBOOK_API_KEY,
+    expires: 14,
+  }}
+>
+  {CookieNoticeStory.bind({})}
+</Story>
